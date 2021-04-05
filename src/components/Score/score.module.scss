@@ -1,0 +1,18 @@
+.score {
+    background-color: #233445;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    h1 {
+        font-weight: 300;
+        margin: 0;
+    }
+}

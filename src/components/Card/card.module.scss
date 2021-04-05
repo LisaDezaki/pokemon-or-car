@@ -1,0 +1,94 @@
+.card {
+    height: 400px;
+    position: relative;
+    width: 300px;
+    transition: all 1s cubic-bezier(0,0,0.2,1);
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+    }
+
+    &:not(.active) {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.5);
+    }
+
+    &.flip {
+        .cardFront {
+            transform: rotateY(180deg);
+        }
+
+        .cardBack {
+            transform: rotateY(360deg);
+        }
+    }
+
+    &.success .cardBack h1 {
+        color: limegreen;
+    }
+
+    &.fail .cardBack h1 {
+        color: crimson;
+    }
+
+    .cardFront,
+    .cardBack {
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        padding: 1rem;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        transition: all 0.3s cubic-bezier(0,0,0.2,1);
+        width: 300px;
+    }
+
+    .cardFront {
+        transform: rotateY(0);
+    }
+    
+    .cardBack {
+        transform: rotateY(180deg);
+        
+    }
+
+    h1, p {
+        font-weight: 300;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
+    button {
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        height: 60px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0.5rem auto;
+        width: 100%;
+
+        &:first-of-type {
+            background-color: cornflowerblue;
+            margin-top: auto;
+        }
+        &:last-of-type {
+            background-color: crimson;
+        }
+    }
+
+    img {
+        margin-top: auto;
+        width: 100%;
+    }
+}
